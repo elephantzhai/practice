@@ -27,9 +27,6 @@ public class problem001 {
         	}
         			
         }
-        
-        
-        
         return res;
     }
 
