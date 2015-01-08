@@ -16,7 +16,7 @@ public class problem009 {
         }else {
 			return false;
 		}
-        System.out.println(tempX);
+//        System.out.println(tempX);
         int len = 0;
         int res = tempX;
         int log1 = 1,log2=1;
@@ -27,7 +27,7 @@ public class problem009 {
         		log1*=10;
         	}
         }
-        System.out.println(len+" "+log1);
+//        System.out.println(len+" "+log1);
         boolean isPalindrome = true;
         res = tempX;
         if(len>1){
