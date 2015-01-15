@@ -62,7 +62,7 @@ public class problem017 {
         
         List<Integer> tempList = null;
         boolean isFirstePush = false;
-        int first,second;
+        int first,lastFirst=0;
         for(i=0;i<allLength - 3;i++){
         	if(i!=0 && num[i-1]==num[i]) continue;
         	for(j=i+1;j<allLength-2;j++){
@@ -77,7 +77,7 @@ public class problem017 {
         				tempArrayPair = tempArrayList.get(k);
         				first = tempArrayPair.get(0);
         				if(first<=j)continue;
-        				if(isFirstePush || num[j]!=num[first]){
+        				if(isFirstePush || num[lastFirst]!=num[first]){
 //        					second = tempArrayPair.get(1);
         					tempList = new ArrayList<Integer>();
         					tempList.add(num[i]);
@@ -86,6 +86,7 @@ public class problem017 {
         					tempList.add(num[tempArrayPair.get(1)]);
         					resList.add(tempList);
         					isFirstePush = false;
+        					lastFirst =first;
         				}
         			}
         			
