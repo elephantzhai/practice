@@ -14,6 +14,10 @@ public class problem018 {
 	public static List<String> letterCombinations(String digits) {
         List<String> resList = new ArrayList<String>();
         List<String> tempList = new ArrayList<String>();
+        if(digits.length() == 0){
+        	resList.add("");
+        	return resList;
+        }
         for(int i=0;i<digits.length();i++){
         	String numString = getDefaultString(digits.charAt(i));
         	for(int j=0;j<numString.length();j++){
