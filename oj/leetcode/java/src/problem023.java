@@ -25,7 +25,7 @@ public class problem023 {
 	}
 
 	public static ListNode mergeKLists(List<ListNode> lists) {
-		ListNode res = null;
+		ListNode res = null,pre = null,temp = null;
 		PriorityQueue<ListNode> heap = new PriorityQueue<ListNode>(10,new Comparator<ListNode>(){  
             @Override  
             public int compare(ListNode n1, ListNode n2)  
@@ -33,8 +33,32 @@ public class problem023 {
                 return n1.val-n2.val;  
             }  
         });
+		for(int i=0;i<lists.size();i++){
+			temp = lists.get(i);
+			if(temp!=null){
+				heap.offer(temp);
+			}
+		}
+		pre = null;
+		res = null;
+		while(heap.size()>0){
+			temp = heap.poll();
+			if(res ==null){
+				res = temp;
+				pre = res;
+			}else{
+				res.next = temp;
+				res = temp;
+			}
+			temp = temp.next;
+			if(temp!=null){
+				heap.offer(temp);
+			}
+		}
 		
-		return res;
+		
+		
+		return pre;
 	}
 
 	public static List<ListNode> initListNode(int[][] nums) {
