@@ -60,8 +60,6 @@ public class problem025 {
 			}
 		}
 		
-		
-		
 		return res.next;
 	}
 	
