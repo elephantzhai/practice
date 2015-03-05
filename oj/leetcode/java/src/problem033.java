@@ -20,7 +20,7 @@ public class problem033 {
 					l = m+1;
 				}
 			}else{
-				if(A[m]<target && target<A[r]){
+				if(A[m]<target && target<=A[r]){
 					l = m+1;
 				}else{
 					r = m-1;
