@@ -17,8 +17,8 @@ public class problem048 {
         		swap(matrix, i, j, len-1-j, len-1-i);
         	}
         }
-        print(matrix);
-        System.out.println("up dong");
+//        print(matrix);
+//        System.out.println("up dong");
         for(int i=0,j=0;i<len/2;i++){
         	for(j=0;j<len;j++){
         		swap(matrix, i, j, len-1-i, j);
@@ -27,7 +27,7 @@ public class problem048 {
     }
 	
 	public static void swap(int[][] map,int i1,int j1,int i2,int j2){
-		System.out.println("swap: "+i1+" "+j1+" / "+i2+" "+j2);
+//		System.out.println("swap: "+i1+" "+j1+" / "+i2+" "+j2);
 		map[i1][j1] += map[i2][j2];
 		map[i2][j2] = map[i1][j1] - map[i2][j2];
 		map[i1][j1] -= map[i2][j2];
