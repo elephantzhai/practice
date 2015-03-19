@@ -44,8 +44,18 @@ public class problem054 {
 	    	m--;
 	    	n--;
 	    }
-	    
-	    if(N%2 == 1){
+	    if(N%2 ==1 && M%2 == 1){
+	    	if(N>M){
+	    		for(int i = times;i<=n;i++){
+		    		res.add(matrix[i][m]);
+		    	}
+	    	}else{
+	    		for(int i = times;i<=m;i++){
+		    		res.add(matrix[n][i]);
+		    	}
+	    	}
+	    	
+	    }else if(N%2 == 1){
 	    	//row
 	    	for(int i = times;i<=m;i++){
 	    		res.add(matrix[n][i]);
