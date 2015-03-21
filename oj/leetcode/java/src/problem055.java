@@ -1,5 +1,5 @@
 
-public class program055 {
+public class problem055 {
 
 	public static void main(String[] args) {
 //		int[] A = {2,3,1,1,4};
