@@ -19,19 +19,15 @@ public class problem021 {
 	}
 
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-		System.out.println("mergeTwoLists");
 		if(l1 == null){
-			System.out.println("l1 null");
 			return l2;
 		}
 		if(l2 == null){
-			System.out.println("l2 null");
 			return l1;
 		}
 		ListNode head = new ListNode(0);
 		ListNode temp = head;
 		while(l1!=null && l2 != null){
-			System.out.println("process l1:"+l1.val+" l2:"+l2.val);
 			if(l1.val<=l2.val){
 				temp.next = l1;
 				l1 = l1.next;
