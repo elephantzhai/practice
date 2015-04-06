@@ -52,6 +52,7 @@ public class problem065 {
 		boolean isEAfter = false;
 		boolean isPos = false;
 		boolean isMinus = false;
+		int epos = -1;
 		
 		for(int i = 0;i<len;i++){
 			char c = purityStr.charAt(i);
@@ -77,6 +78,7 @@ public class problem065 {
 						return false;
 					}else{
 						isE = true;
+						epos = i;
 					}
 					if(!isEBefore){
 						return false;
@@ -94,6 +96,10 @@ public class problem065 {
 				}
 			}else if(c == '-'){
 				if(isE){
+					if(epos+1 != i || i == len-1){
+						return false;
+					}
+					
 					if(isPos || isMinus){
 						return false;
 					}
@@ -103,6 +109,9 @@ public class problem065 {
 				}
 			}else if(c == '+'){
 				if(isE){
+					if(epos+1 != i || i == len-1){
+						return false;
+					}
 					if(isPos || isMinus){
 						return false;
 					}
