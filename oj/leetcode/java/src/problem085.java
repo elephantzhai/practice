@@ -1,14 +1,40 @@
 import java.util.LinkedList;
 
 
-public class problem084 {
+public class problem085 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int[] height = {2,1,5,6,2,3};
-		int max = largestRectangleArea(height);
-		System.out.println("res:"+max);
+		char[][] matrix = {
+				{'0','0','1','0'},
+				{'0','0','0','1'},
+				{'0','1','1','1'},
+				{'0','0','1','1'}
+		};
+		int res = maximalRectangle(matrix);
+		System.out.println("res:"+res);
 	}
+	
+	public static int maximalRectangle(char[][] matrix) {
+		int rowLen = matrix.length;
+		int colLen = matrix[0].length;
+		int[] heights = new int[colLen];
+		int maxArea = 0;
+		for(int i = 0;i<rowLen;i++){
+			for(int j=0;j<colLen;j++){
+				if(matrix[i][j] == '0'){
+					heights[j] = 0;
+				}else{
+					heights[j] += 1;
+				}
+			}
+			int lineMax = largestRectangleArea(heights);
+			if(lineMax>maxArea){
+				maxArea = lineMax;
+			}
+			
+		}
+        return maxArea;
+    }
 	
 	public static int largestRectangleArea(int[] height) {
         if(height == null || height.length == 0) return 0;
@@ -21,11 +47,6 @@ public class problem084 {
         		max = Math.max(max, curArea);
         	}
         	stack.push(i);
-//        	System.out.print("i:"+i+" | ");
-//        	for(int j = stack.size()-1;j>=0;j--){
-//        		System.out.print(stack.get(j)+" ");
-//        	}
-//        	System.out.println();
         }
         while(!stack.isEmpty()){
         	int index = stack.pop();
