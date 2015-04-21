@@ -16,7 +16,9 @@ public class problem085 {
 	
 	public static int maximalRectangle(char[][] matrix) {
 		int rowLen = matrix.length;
+		if(rowLen == 0) return 0;
 		int colLen = matrix[0].length;
+		if(colLen == 0) return 0;
 		int[] heights = new int[colLen];
 		int maxArea = 0;
 		for(int i = 0;i<rowLen;i++){
